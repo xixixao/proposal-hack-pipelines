@@ -527,7 +527,7 @@ in their expressions. These are:
   async generators; but **not** arrow functions, as explained above),
 - `class` definitions,
 - `for` and `while` statements,
-- `catch` clauses (but see [Additional Feature TS][]), and
+- `catch` clauses, and
 - `with` statements.
 
 ```js
@@ -709,62 +709,6 @@ See [core syntax, bare style][bare style].
 
 See [core syntax, topic style][topic style].
 
-## Additional Feature BC
-
-See [Additional Feature BC][].
-
-## Additional Feature BA
-
-See [Additional Feature BA][].
-
-## Additional Feature BP
-
-See [Additional Feature BP][].
-
-### WHATWG Fetch Standard (Core Proposal + Additional Feature BP)
-
-See [Additional Feature BP][].
-
-### jQuery (Core Proposal + Additional Feature BP)
-
-See [Additional Feature BP][].
-
-### Lodash (Core Proposal + Additional Feature BP)
-
-See [Additional Feature BP][].
-
-## Additional Feature TS
-
-See [Additional Feature TS][].
-
-## Additional Feature PF
-
-See [Additional Feature PF][].
-
-### Ramda (Core Proposal + Additional Feature BP+PF)
-
-See [Additional Feature PF][].
-
-### WHATWG Streams Standard (Core Proposal + Additional Features BP+PP+PF)
-
-See [Additional Feature PF][].
-
-## Additional Feature NP
-
-See [Additional Feature NP][].
-
-### Lodash (Core Proposal + Additional Features BP+PP+PF+NP)
-
-See [Additional Feature NP][].
-
-### Ramda (Core Proposal + Additional Features BP+PF+NP)
-
-See [Additional Feature NP][].
-
-### WHATWG Streams Standard (Core Proposal + Additional Features BP+PP+PF+NP)
-
-See [Additional Feature NP][].
-
 ## Goals
 
 See [Goals][].
@@ -933,12 +877,6 @@ See [Term rewriting][].
 [`in` relational operator]: https://tc39.github.io/ecma262/#sec-relational-operators
 [`match` expressions]: ./relations.md#pattern-matching
 [`new.target`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new.target
-[additional feature ba]: ./additional-feature-ba.md
-[additional feature bc]: ./additional-feature-bc.md
-[additional feature bp]: ./additional-feature-bp.md
-[additional feature np]: ./additional-feature-np.md
-[additional feature pf]: ./additional-feature-pf.md
-[additional feature ts]: ./additional-feature-ts.md
 [additional features]: ./readme.md#additional-features
 [annevk]: https://github.com/annevk
 [antecedent]: https://en.wikipedia.org/wiki/Antecedent_(grammar)
@@ -1155,6 +1093,6 @@ See [Term rewriting][].
 [whatwg streams + cp + bp + pf]: ./additional-feature-pf.md#whatwg-streams-standard-core-proposal--additional-feature-bppf
 [whatwg streams standard]: https://stream.spec.whatwg.org/
 [whatwg-stream piping]: https://streams.spec.whatwg.org/#pipe-chains
-[why-not-smart]: ./why-not-so-smart.md
+[why-not-smart]: ./why-not-smart.md
 [wikipedia: term rewriting]: https://en.wikipedia.org/wiki/Term_rewriting
 [zero runtime cost]: ./goals.md#zero-runtime-cost
