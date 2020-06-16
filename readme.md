@@ -224,9 +224,6 @@ promise
 This pipeline is also relatively linear, with only one level of indentation, and
 with each transformation step on its own line.
 
-`… |> capitalize` uses a special **shortcut** called the **[bare style][]**, explained further below.
-It is a bare unary function call that is, in this case, equivalent to `… |> capitalize(#)`.
-
 <td>
 
 ```js
@@ -701,14 +698,6 @@ See [Lodash + CP][].
 
 See [core syntax](core-syntax.md).
 
-### Bare style
-
-See [core syntax, bare style][bare style].
-
-### Topic style
-
-See [core syntax, topic style][topic style].
-
 ## Goals
 
 See [Goals][].
@@ -888,10 +877,6 @@ See [Term rewriting][].
 [babel update summary]: https://github.com/babel/proposals/issues/29#issuecomment-372828328
 [background]: ./readme.md
 [backward compatibility]: ./goals.md#backward-compatibility
-[bare awaited function call]: ./core-syntax.md#bare-style
-[bare constructor call]: ./core-syntax.md#bare-style
-[bare function call]: ./core-syntax.md#bare-style
-[bare style]: ./core-syntax.md#bare-style
 [binding]: https://en.wikipedia.org/wiki/Binding_(linguistics)
 [block parameters]: ./relations.md#block-parameters
 [clojure compact function]: https://clojure.org/reference/reader#_dispatch
