@@ -6,9 +6,7 @@
   "license": "MIT",
   "repository": "xixixao/proposal-hack-pipelines",
   "scripts": {
-    "prespec": "mkdir -p out/",
-    "spec": "ecmarkup spec.html out/index.html --assets inline --contributors \"Michal Srb, Ecma International\" --copyright true --title \"Hack Pipelines\" --status \"proposal\" --stage 0",
-    "prewatch": "mkdir -p out/",
+    "spec": "ecmarkup spec.html docs/index.html --assets inline --contributors \"Michal Srb (original by J. S. Choi), Ecma International\" --copyright true --title \"Hack Pipelines\" --status \"proposal\" --stage 0",
     "watch": "npm run spec -- --watch"
   },
   "devDependencies": {
