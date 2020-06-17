@@ -21,111 +21,109 @@ to loosest**. Each level may contain the parse types listed for that level –
 **as well as** any expression types from any precedence level that is listed
 **above** it.
 
-| Level               | Type                             | Form                                | Associativity / fixity           |
-| ------------------- | -------------------------------- | ----------------------------------- | -------------------------------- |
-| Primary             | This                             | `this`                              | Nullary                          |
-| ″″                  | **[Primary topic][]**            | **`#`**                             | ″″                               |
-| ″″                  | Identifiers                      | `a` …                               | ″″                               |
-| ″″                  | Null                             | `null`                              | ″″                               |
-| ″″                  | Booleans                         | `true` `false`                      | ″″                               |
-| ″″                  | Numerics                         | `0` …                               | ″″                               |
-| ″″                  | Arrays                           | `[…]`                               | Circumfix                        |
-| ″″                  | Object                           | `{…}`                               | ″″                               |
-| ″″                  | Function                         | `function (…) {…}`                  | ″″                               |
-| ″″                  | Classes                          | `class … {…}`                       | ″″                               |
-| ″″                  | Generators                       | `function * (…) {…}`                | ″″                               |
-| ″″                  | Async functions                  | `async function (…) {…}`            | ″″                               |
-| ″″                  | Regular expression               | `/…/…`                              | ″″                               |
-| ″″                  | Templates                        | `` …`…` ``                          | ″″                               |
-| ″″                  | Parentheses                      | `(…)`                               | Circumfix                        |
-| LHS                 | Static properties                | `….…`                               | ″″                               |
-| ″″                  | Dynamic properties               | `…[…]`                              | LTR infix with circumfix         |
-| ″″                  | Tagged templates                 | `` …`…` ``                          | Unchainable infix with circumfix |
-| ″″                  | Super call op.s                  | `super(…)`                          | Unchainable prefix               |
-| ″″                  | Super properties                 | `super.…`                           | ″″                               |
-| ″″                  | Meta properties                  | `meta.…`                            | ″″                               |
-| ″″                  | Object construction              | `new …`                             | Prefix                           |
-| ″″                  | Function call                    | `…(…)`                              | LTR infix with circumfix         |
-| Postfix unary       | Postfix incrementing             | `…++`                               | Postfix                          |
-| ″″                  | Postfix decrementing             | `…--`                               | ″″                               |
-| Prefix unary        | Prefix incrementing              | `++…`                               | RTL prefix                       |
-| Prefix unary        | Prefix decrementing              | `--…`                               | ″″                               |
-| ″″                  | Deletes                          | `delete …`                          | ″″                               |
-| ″″                  | Voids                            | `void …`                            | ″″                               |
-| ″″                  | Unary `+`/`-`                    | `+…`                                | ″″                               |
-| ″″                  | Bitwise NOT `~…`                 | `~…`                                | ″″                               |
-| ″″                  | Logical NOT `!…`                 | `!…`                                | ″″                               |
-| ″″                  | Awaiting                         | `await …`                           | ″″                               |
-| Exponentiation      | Exponentiation                   | `… ** …`                            | RTL infix                        |
-| Multiplicative      | Multiplication                   | `… * …`                             | LTR infix                        |
-| ″″                  | Division                         | `… / …`                             | ″″                               |
-| ″″                  | Modulus                          | `… % …`                             | ″″                               |
-| Additive            | Addition                         | `… + …`                             | ″″                               |
-| ″″                  | Subtraction                      | `… - …`                             | ″″                               |
-| Bitwise shift       | Left shift                       | `… << …`                            | ″″                               |
-| ″″                  | Right shift                      | `… >> …`                            | ″″                               |
-| ″″                  | Signed right shift               | `… >> …`                            | ″″                               |
-| Relational          | Greater than                     | `… < …`                             | ″″                               |
-| ″″                  | Less than                        | `… > …`                             | ″″                               |
-| ″″                  | Greater than / equal to          | `… >= …`                            | ″″                               |
-| ″″                  | Less than / equal to             | `… <= …`                            | ″″                               |
-| ″″                  | Containment                      | `… in …`                            | ″″                               |
-| ″″                  | Instance-of                      | `… instanceof …`                    | ″″                               |
-| Equality            | Abstract equality                | `… == …`                            | ″″                               |
-| ″″                  | Abstract inequality              | `… != …`                            | ″″                               |
-| ″″                  | Strict equality                  | `… === …`                           | ″″                               |
-| ″″                  | Strict inequality                | `… !== …`                           | ″″                               |
-| Bitwise AND         |                                  | `… & …`                             | ″″                               |
-| Bitwise XOR         |                                  | `… ^ …`                             | ″″                               |
-| Bitwise OR          |                                  | `… \| …`                            | ″″                               |
-| Logical AND         |                                  | `… ^^ …`                            | ″″                               |
-| Logical OR          |                                  | `… \|\| …`                          | ″″                               |
-| Conditional         |                                  | `… ? … : …`                         | RTL ternary infix                |
-| Pipeline            | **[Pipelines][]**                | **`… \|> …`**                       | LTR infix                        |
-| Assignment          | **[Pipeline functions][]**       | **`+> …`**                          | Prefix                           |
-| ″″                  | **[Async pipeline functions][]** | **`async +> …`**                    | Prefix                           |
-| ″″                  | Arrow functions                  | `… => …`                            | RTL infix                        |
-| ″″                  | Async arrow functions            | `async … => …`                      | RTL infix                        |
-| ″″                  | Assignment                       | `… = …`                             | ″″                               |
-| ″″                  |                                  | `… += …`                            | ″″                               |
-| ″″                  |                                  | `… -= …`                            | ″″                               |
-| ″″                  |                                  | `… *= …`                            | ″″                               |
-| ″″                  |                                  | `… %= …`                            | ″″                               |
-| ″″                  |                                  | `… **= …`                           | ″″                               |
-| ″″                  |                                  | `… <<= …`                           | ″″                               |
-| ″″                  |                                  | `… >>= …`                           | ″″                               |
-| ″″                  |                                  | `… >>>= …`                          | ″″                               |
-| ″″                  |                                  | `… &= …`                            | ″″                               |
-| ″″                  |                                  | `… \|= …`                           | ″″                               |
-| Yield               | Yielding                         | `yield …`                           | Prefix                           |
-| ″″                  | Flat yielding                    | `yield * …`                         | ″″                               |
-| ″″                  | Spreading                        | `...…`                              | ″″                               |
-| Comma level         | Comma                            | `…, …`                              | LTR infix                        |
-| Base statements     | Expression statements            | `…;`                                | Postfix with [ASI][]             |
-| ″″                  | Empty statements                 | `;`                                 | Nullary with [ASI][]             |
-| ″″                  | Debugger statements              | `debugger;`                         | ″″                               |
-| ″″                  | Block statements                 | `{…}`                               | Circumfix                        |
-| ″″                  | Labelled statements              | `…: …`                              | Prefix                           |
-| ″″                  | Continue statements              | `continue …;`                       | Circumfix with [ASI][]           |
-| ″″                  | Break statements                 | `break …;`                          | ″″                               |
-| ″″                  | Return statements                | `return …;`                         | ″″                               |
-| ″″                  | Throw statements                 | `throw …;`                          | ″″                               |
-| ″″                  | Variable statements              | `var …;`                            | ″″                               |
-| ″″                  | Lexical declarations             | `let …;`                            | ″″                               |
-| ″″                  | ″″                               | `const …;`                          | ″″                               |
-| ″″                  | Hoistable declarations           | `function … (…) {…}`                | Circumfix with prefix            |
-| ″″                  | ″″                               | `async function … (…) {…}`          | ″″                               |
-| ″″                  | ″″                               | `function * … (…) {…}`              | ″″                               |
-| ″″                  | ″″                               | `async function * … (…) {…}`        | ″″                               |
-| ″″                  | Class declarations               | `class … {…}`                       | ″″                               |
-| Compound statements | If statements                    | `if (…) … else …`                   | Circumfix with prefix            |
-| ″″                  | Switch statements                | `switch (…) …`                      | ″″                               |
-| ″″                  | Iteration statements             |                                     | ″″                               |
-| ″″                  | With statements                  | `with (…) {…}`                      | ″″                               |
-| ″″                  | Try statements                   | `try {…} catch (…) {…} finally {…}` | ″″                               |
-| Statement list      | Case clause                      | `case: …`                           | Unchainable prefix               |
-| Root                | Script                           |                                     | Root                             |
-| ″″                  | Module                           |                                     | ″″                               |
+| Level               | Type                    | Form                                | Associativity / fixity           |
+| ------------------- | ----------------------- | ----------------------------------- | -------------------------------- |
+| Primary             | This                    | `this`                              | Nullary                          |
+| ″″                  | **[Primary topic][]**   | **`#`**                             | ″″                               |
+| ″″                  | Identifiers             | `a` …                               | ″″                               |
+| ″″                  | Null                    | `null`                              | ″″                               |
+| ″″                  | Booleans                | `true` `false`                      | ″″                               |
+| ″″                  | Numerics                | `0` …                               | ″″                               |
+| ″″                  | Arrays                  | `[…]`                               | Circumfix                        |
+| ″″                  | Object                  | `{…}`                               | ″″                               |
+| ″″                  | Function                | `function (…) {…}`                  | ″″                               |
+| ″″                  | Classes                 | `class … {…}`                       | ″″                               |
+| ″″                  | Generators              | `function * (…) {…}`                | ″″                               |
+| ″″                  | Async functions         | `async function (…) {…}`            | ″″                               |
+| ″″                  | Regular expression      | `/…/…`                              | ″″                               |
+| ″″                  | Templates               | `` …`…` ``                          | ″″                               |
+| ″″                  | Parentheses             | `(…)`                               | Circumfix                        |
+| LHS                 | Static properties       | `….…`                               | ″″                               |
+| ″″                  | Dynamic properties      | `…[…]`                              | LTR infix with circumfix         |
+| ″″                  | Tagged templates        | `` …`…` ``                          | Unchainable infix with circumfix |
+| ″″                  | Super call op.s         | `super(…)`                          | Unchainable prefix               |
+| ″″                  | Super properties        | `super.…`                           | ″″                               |
+| ″″                  | Meta properties         | `meta.…`                            | ″″                               |
+| ″″                  | Object construction     | `new …`                             | Prefix                           |
+| ″″                  | Function call           | `…(…)`                              | LTR infix with circumfix         |
+| Postfix unary       | Postfix incrementing    | `…++`                               | Postfix                          |
+| ″″                  | Postfix decrementing    | `…--`                               | ″″                               |
+| Prefix unary        | Prefix incrementing     | `++…`                               | RTL prefix                       |
+| Prefix unary        | Prefix decrementing     | `--…`                               | ″″                               |
+| ″″                  | Deletes                 | `delete …`                          | ″″                               |
+| ″″                  | Voids                   | `void …`                            | ″″                               |
+| ″″                  | Unary `+`/`-`           | `+…`                                | ″″                               |
+| ″″                  | Bitwise NOT `~…`        | `~…`                                | ″″                               |
+| ″″                  | Logical NOT `!…`        | `!…`                                | ″″                               |
+| ″″                  | Awaiting                | `await …`                           | ″″                               |
+| Exponentiation      | Exponentiation          | `… ** …`                            | RTL infix                        |
+| Multiplicative      | Multiplication          | `… * …`                             | LTR infix                        |
+| ″″                  | Division                | `… / …`                             | ″″                               |
+| ″″                  | Modulus                 | `… % …`                             | ″″                               |
+| Additive            | Addition                | `… + …`                             | ″″                               |
+| ″″                  | Subtraction             | `… - …`                             | ″″                               |
+| Bitwise shift       | Left shift              | `… << …`                            | ″″                               |
+| ″″                  | Right shift             | `… >> …`                            | ″″                               |
+| ″″                  | Signed right shift      | `… >> …`                            | ″″                               |
+| Relational          | Greater than            | `… < …`                             | ″″                               |
+| ″″                  | Less than               | `… > …`                             | ″″                               |
+| ″″                  | Greater than / equal to | `… >= …`                            | ″″                               |
+| ″″                  | Less than / equal to    | `… <= …`                            | ″″                               |
+| ″″                  | Containment             | `… in …`                            | ″″                               |
+| ″″                  | Instance-of             | `… instanceof …`                    | ″″                               |
+| Equality            | Abstract equality       | `… == …`                            | ″″                               |
+| ″″                  | Abstract inequality     | `… != …`                            | ″″                               |
+| ″″                  | Strict equality         | `… === …`                           | ″″                               |
+| ″″                  | Strict inequality       | `… !== …`                           | ″″                               |
+| Bitwise AND         |                         | `… & …`                             | ″″                               |
+| Bitwise XOR         |                         | `… ^ …`                             | ″″                               |
+| Bitwise OR          |                         | `… \| …`                            | ″″                               |
+| Logical AND         |                         | `… ^^ …`                            | ″″                               |
+| Logical OR          |                         | `… \|\| …`                          | ″″                               |
+| Conditional         |                         | `… ? … : …`                         | RTL ternary infix                |
+| Pipeline            | **[Pipelines][]**       | **`… \|> …`**                       | LTR infix                        |
+| ″″                  | Arrow functions         | `… => …`                            | RTL infix                        |
+| ″″                  | Async arrow functions   | `async … => …`                      | RTL infix                        |
+| ″″                  | Assignment              | `… = …`                             | ″″                               |
+| ″″                  |                         | `… += …`                            | ″″                               |
+| ″″                  |                         | `… -= …`                            | ″″                               |
+| ″″                  |                         | `… *= …`                            | ″″                               |
+| ″″                  |                         | `… %= …`                            | ″″                               |
+| ″″                  |                         | `… **= …`                           | ″″                               |
+| ″″                  |                         | `… <<= …`                           | ″″                               |
+| ″″                  |                         | `… >>= …`                           | ″″                               |
+| ″″                  |                         | `… >>>= …`                          | ″″                               |
+| ″″                  |                         | `… &= …`                            | ″″                               |
+| ″″                  |                         | `… \|= …`                           | ″″                               |
+| Yield               | Yielding                | `yield …`                           | Prefix                           |
+| ″″                  | Flat yielding           | `yield * …`                         | ″″                               |
+| ″″                  | Spreading               | `...…`                              | ″″                               |
+| Comma level         | Comma                   | `…, …`                              | LTR infix                        |
+| Base statements     | Expression statements   | `…;`                                | Postfix with [ASI][]             |
+| ″″                  | Empty statements        | `;`                                 | Nullary with [ASI][]             |
+| ″″                  | Debugger statements     | `debugger;`                         | ″″                               |
+| ″″                  | Block statements        | `{…}`                               | Circumfix                        |
+| ″″                  | Labelled statements     | `…: …`                              | Prefix                           |
+| ″″                  | Continue statements     | `continue …;`                       | Circumfix with [ASI][]           |
+| ″″                  | Break statements        | `break …;`                          | ″″                               |
+| ″″                  | Return statements       | `return …;`                         | ″″                               |
+| ″″                  | Throw statements        | `throw …;`                          | ″″                               |
+| ″″                  | Variable statements     | `var …;`                            | ″″                               |
+| ″″                  | Lexical declarations    | `let …;`                            | ″″                               |
+| ″″                  | ″″                      | `const …;`                          | ″″                               |
+| ″″                  | Hoistable declarations  | `function … (…) {…}`                | Circumfix with prefix            |
+| ″″                  | ″″                      | `async function … (…) {…}`          | ″″                               |
+| ″″                  | ″″                      | `function * … (…) {…}`              | ″″                               |
+| ″″                  | ″″                      | `async function * … (…) {…}`        | ″″                               |
+| ″″                  | Class declarations      | `class … {…}`                       | ″″                               |
+| Compound statements | If statements           | `if (…) … else …`                   | Circumfix with prefix            |
+| ″″                  | Switch statements       | `switch (…) …`                      | ″″                               |
+| ″″                  | Iteration statements    |                                     | ″″                               |
+| ″″                  | With statements         | `with (…) {…}`                      | ″″                               |
+| ″″                  | Try statements          | `try {…} catch (…) {…} finally {…}` | ″″                               |
+| Statement list      | Case clause             | `case: …`                           | Unchainable prefix               |
+| Root                | Script                  |                                     | Root                             |
+| ″″                  | Module                  |                                     | ″″                               |
 
 ["data-to-ink" visual ratio]: https://www.darkhorseanalytics.com/blog/data-looks-better-naked
 ["don’t break my code"]: ./goals.md#dont-break-my-code
