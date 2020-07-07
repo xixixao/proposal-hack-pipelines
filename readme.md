@@ -1,4 +1,4 @@
-# Smart pipelines
+# Hack pipelines
 
 ECMAScript Stage-0 Proposal. Living Document. Michal Srb, 2020-06.
 
